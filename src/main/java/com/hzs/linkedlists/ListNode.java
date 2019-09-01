@@ -27,12 +27,10 @@ public class ListNode {
         node.next = null;
     }
 
-    void print(ListNode head){
-        if(head == null)
-            throw new NullPointerException("头指针为空了");
-        if(head.val == 0)
+    void print(){
+        if(this.val == 0)
             throw new IllegalArgumentException("val 不可以为0");
-        ListNode p = head;
+        ListNode p = this;
         System.out.println(p.val);
         while( p.next != null){
             System.out.println(p.next.val);
