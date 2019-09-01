@@ -38,10 +38,10 @@ public class ListNode {
         }
     }
 
-    public ListNode createTestList(){
-        if(this.val != 1)
+    public ListNode createTestList(int length){
+        if( this.val != 1)
             this.val = 1;
-        for (int i = 2; i < 6; i++) {
+        for (int i = 2; i < length + 1; i++) {
             this.add(new ListNode(i));
         }
         return this;
