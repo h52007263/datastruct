@@ -37,4 +37,13 @@ public class ListNode {
             p = p.next;
         }
     }
+
+    public ListNode createTestList(){
+        if(this.val != 1)
+            this.val = 1;
+        for (int i = 2; i < 6; i++) {
+            this.add(new ListNode(i));
+        }
+        return this;
+    }
 }
