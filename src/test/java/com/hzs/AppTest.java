@@ -15,6 +15,12 @@ public class AppTest
     @Test
     public void shouldAnswerWithTrue()
     {
-        assertTrue( true );
+        assertTrue( 1 == 2 );
+    }
+
+    @Test
+    public void test(){
+        String s1 = "h";
+        s1 = "h2";
     }
 }
