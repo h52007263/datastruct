@@ -48,6 +48,21 @@ public class ListNode {
     }
 
     /**
+     * 通过索引获取链表节点
+     * @param index 索引
+     * @return ListNode
+     */
+    public ListNode getNodeByIndex(int index) {
+        if(index <= 0 || index > this.size() )
+            throw new IllegalArgumentException("index非法输入");
+        ListNode p = this;
+        for (int i = 1; i < index; i++) {
+            p = p.next;
+        }
+        return p;
+    }
+
+    /**
      * 获取链表长度
      * @return 返回链表长度
      */
@@ -61,4 +76,8 @@ public class ListNode {
         return len;
     }
 
+    @Override
+    public String toString() {
+        return val + "";
+    }
 }
