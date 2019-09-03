@@ -46,4 +46,19 @@ public class ListNode {
         }
         return this;
     }
+
+    /**
+     * 获取链表长度
+     * @return 返回链表长度
+     */
+    public int size() {
+        int len = 1;
+        ListNode p = this;
+        while(p.next != null){
+            len++;
+            p = p.next;
+        }
+        return len;
+    }
+
 }
