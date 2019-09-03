@@ -1,31 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="32a1931a-bbc4-4226-8bbe-35a96de302f1" name="Default Changelist" comment="分支新建目录">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_11.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/datastruct.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wxw/singlelink/LinkedList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wxw/singlelink/Linkprint.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wxw/链表.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/hzs/App.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/hzs/linkedlists/Demo1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/hzs/linkedlists/Demo1_2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/hzs/linkedlists/Demo2_1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/hzs/linkedlists/Demo3.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/hzs/linkedlists/Demo4.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/hzs/linkedlists/ListNode.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/wxw/singlelink/LinkedList$ListNode.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/wxw/singlelink/LinkedList.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/wxw/singlelink/Linkprint.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/wxw/singlelink/Node.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/test-classes/com/hzs/AppTest.class" afterDir="false" />
+    <list default="true" id="32a1931a-bbc4-4226-8bbe-35a96de302f1" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hzs/App.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hzs/linkedlists/Demo1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hzs/linkedlists/Demo1_2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hzs/linkedlists/Demo2_1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hzs/linkedlists/Demo3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hzs/linkedlists/Demo4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hzs/linkedlists/ListNode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/wxw/singlelink/LinkedList$ListNode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/wxw/singlelink/LinkedList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/wxw/singlelink/Linkprint.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/wxw/singlelink/Node.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/hzs/AppTest.class" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -43,8 +31,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/hzs/linkedlists/Demo1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="38" column="5" lean-forward="true" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
+            <state relative-caret-position="57">
+              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
             </state>
           </provider>
         </entry>
@@ -277,7 +265,7 @@
       <updated>1567350069247</updated>
       <workItem from="1567350078000" duration="1676000" />
       <workItem from="1567433644581" duration="1444000" />
-      <workItem from="1567512465911" duration="10000000" />
+      <workItem from="1567512465911" duration="10264000" />
     </task>
     <task id="LOCAL-00001" summary="分支新建目录">
       <created>1567351418689</created>
@@ -286,11 +274,18 @@
       <option name="project" value="LOCAL" />
       <updated>1567351418689</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="反向打印链表 栈和递归的思想">
+      <created>1567522558559</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1567522558559</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13120000" />
+    <option name="totallyTimeSpent" value="13384000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
@@ -373,7 +368,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="分支新建目录" />
-    <option name="LAST_COMMIT_MESSAGE" value="分支新建目录" />
+    <MESSAGE value="反向打印链表 栈和递归的思想" />
+    <option name="LAST_COMMIT_MESSAGE" value="反向打印链表 栈和递归的思想" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/README.md">
@@ -461,8 +457,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/hzs/linkedlists/Demo1.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="38" column="5" lean-forward="true" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
+        <state relative-caret-position="57">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
         </state>
       </provider>
     </entry>
