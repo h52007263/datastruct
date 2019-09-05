@@ -58,6 +58,34 @@ public class TreeNode {
     }
 
     /**
+     * 前序遍历
+     * @param root
+     */
+    public void preOrder(TreeNode root) {
+        if (root != null) {
+            System.out.println(root.val);
+            preOrder(root.left);
+            preOrder(root.right);
+        } else {
+            return;
+        }
+    }
+
+    /**
+     * 后序遍历
+     * @param root
+     */
+    public void postOrder(TreeNode root) {
+        if (root != null) {
+            postOrder(root.left);
+            postOrder(root.right);
+            System.out.println(root.val);
+        } else {
+            return;
+        }
+    }
+
+    /**
      * 非递归层次遍历
      * @param pTreeRoot
      * @return
@@ -95,6 +123,8 @@ public class TreeNode {
             return r + 1;
         }
     }
+
+
 
 
 
