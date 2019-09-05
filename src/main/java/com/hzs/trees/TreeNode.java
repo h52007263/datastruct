@@ -82,6 +82,19 @@ public class TreeNode {
         return list;
     }
 
+    // 二叉树的深度
+    public int depth(TreeNode root){
+        if(root==null){
+            return 0;
+        }
+        int l = depth(root.left);
+        int r = depth(root.right);
+        if(l > r){
+            return l + 1;
+        }else{
+            return r + 1;
+        }
+    }
 
 
 
