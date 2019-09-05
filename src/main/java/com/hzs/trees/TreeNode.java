@@ -124,7 +124,26 @@ public class TreeNode {
         }
     }
 
-
+    /**
+     * 非递归中序遍历
+     * @param pTreeNode
+     */
+    public void noRecurInOrder(TreeNode pTreeNode){
+        Stack<TreeNode> stack = new Stack<TreeNode>();
+        while(pTreeNode!=null || !stack.isEmpty()){
+            // 左子节点入栈
+            while(pTreeNode!=null){
+                stack.push(pTreeNode);
+                pTreeNode = pTreeNode.left;
+            }
+            // 节点出栈，并判断该节点是否有右子节点，有就入栈
+            if(!stack.isEmpty()){
+                pTreeNode = stack.pop();
+                System.out.print(pTreeNode.val + " ");
+                pTreeNode = pTreeNode.right;
+            }
+        }
+    }
 
 
 
