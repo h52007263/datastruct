@@ -1,8 +1,6 @@
 package com.hzs.trees;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.TreeSet;
+import java.util.*;
 
 /**
  * @author hezhensheng
@@ -18,7 +16,7 @@ public class TreeNode {
     TreeNode(){
 
     }
-    TreeNode(int x) {
+    public TreeNode(int x) {
         val = x;
     }
 
@@ -58,6 +56,34 @@ public class TreeNode {
             inPrint(tree.right);
         }
     }
+
+    /**
+     * 非递归层次遍历
+     * @param pTreeRoot
+     * @return
+     */
+    public ArrayList<Integer> noRecurLevelOrder(TreeNode pTreeRoot){ //非递归版本
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        if(pTreeRoot == null){
+            return null;
+        }
+        Queue<TreeNode> queue = new LinkedList<TreeNode>();
+        queue.offer(pTreeRoot);
+        while(!queue.isEmpty()){
+            TreeNode treeNode = queue.poll();
+            if(treeNode.left!=null){
+                queue.offer(treeNode.left);
+            }
+            if(treeNode.right!=null){
+                queue.offer(treeNode.right);
+            }
+            list.add(treeNode.val);
+        }
+        return list;
+    }
+
+
+
 
     @Override
     public String toString() {
