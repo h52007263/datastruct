@@ -14,7 +14,6 @@ public class TreeNode {
     TreeNode left;
     TreeNode right;
     TreeNode(){
-
     }
     public TreeNode(int x) {
         val = x;
