@@ -19,6 +19,15 @@ public class TreeNode {
         val = x;
     }
 
+    public static TreeNode createNodes() {
+        TreeNode root = new TreeNode(5);
+        root.add(3);
+        root.add(7);
+        root.add(2);
+        root.add(4);
+        return root;
+    }
+
     /**
      * 增加一个节点
      * @param v
@@ -130,7 +139,7 @@ public class TreeNode {
     public void noRecurInOrder(TreeNode pTreeNode){
         Stack<TreeNode> stack = new Stack<TreeNode>();
         while(pTreeNode!=null || !stack.isEmpty()){
-            // 左子节点入栈
+            // 子节点入栈
             while(pTreeNode!=null){
                 stack.push(pTreeNode);
                 pTreeNode = pTreeNode.left;
