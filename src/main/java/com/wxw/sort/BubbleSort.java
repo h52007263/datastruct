@@ -1,5 +1,7 @@
 package com.wxw.sort;
-
+import java.text.SimpleDateFormat;
+import java.util.Arrays;
+import java.util.Date;
 /**
  * @Author: wxw
  * @create: 2019-09-08-14:58
@@ -8,54 +10,111 @@ package com.wxw.sort;
  * 每一轮从头开始两两比较，将较大的项放在较小项的右边，
  * 这样每轮下来保证该轮最大的数在最右边。
  */
-
 public class BubbleSort {
 
-    public static   int[] sort(int[] array){
-        //for循环表示总共需要比较多少论
-        for(int i=1;i<array.length;i++){
-            //设定一个标记，若为true，则表示次循环没有进行交换，也就是待排序列已有序列，排序已经完成。
-            boolean flag=true;
-            //这里for循环表示每轮比较参与元素的下标
-            //对当前无序区间array[0......length-1]进行排序
-            //j的范围很关键，这个范围是在逐步缩小的，因为每轮比较都会将最大的放在右边
-            for(int j=0;j<array.length-i;j++){
-                if(array[i]>array[j+1]){
-                    int temp=array[j];
-                    array[j]=array[j+1];
-                    array[j+1]=temp;
-                    flag=false;
+    public static void main(String[] args) {
+//		int arr[] = {3, 9, -1, 10, 20};
+//
+//		System.out.println("排序前");
+//		System.out.println(Arrays.toString(arr));
+
+        //为了容量理解，我们把冒泡排序的演变过程，给大家展示
+
+        //测试一下冒泡排序的速度O(n^2), 给80000个数据，测试
+        //创建要给80000个的随机的数组
+        int[] arr = new int[80000];
+        for(int i =0; i < 80000;i++) {
+            arr[i] = (int)(Math.random() * 8000000); //生成一个[0, 8000000) 数
+        }
+
+        Date data1 = new Date();
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String date1Str = simpleDateFormat.format(data1);
+        System.out.println("排序前的时间是=" + date1Str);
+
+        //测试冒泡排序
+        bubbleSort(arr);
+
+        Date data2 = new Date();
+        String date2Str = simpleDateFormat.format(data2);
+        System.out.println("排序后的时间是=" + date2Str);
+
+        //System.out.println("排序后");
+        //System.out.println(Arrays.toString(arr));
+
+
+		/*
+
+		// 第二趟排序，就是将第二大的数排在倒数第二位
+
+		for (int j = 0; j < arr.length - 1 - 1 ; j++) {
+			// 如果前面的数比后面的数大，则交换
+			if (arr[j] > arr[j + 1]) {
+				temp = arr[j];
+				arr[j] = arr[j + 1];
+				arr[j + 1] = temp;
+			}
+		}
+
+		System.out.println("第二趟排序后的数组");
+		System.out.println(Arrays.toString(arr));
+
+
+		// 第三趟排序，就是将第三大的数排在倒数第三位
+
+		for (int j = 0; j < arr.length - 1 - 2; j++) {
+			// 如果前面的数比后面的数大，则交换
+			if (arr[j] > arr[j + 1]) {
+				temp = arr[j];
+				arr[j] = arr[j + 1];
+				arr[j + 1] = temp;
+			}
+		}
+
+		System.out.println("第三趟排序后的数组");
+		System.out.println(Arrays.toString(arr));
+
+		// 第四趟排序，就是将第4大的数排在倒数第4位
+
+		for (int j = 0; j < arr.length - 1 - 3; j++) {
+			// 如果前面的数比后面的数大，则交换
+			if (arr[j] > arr[j + 1]) {
+				temp = arr[j];
+				arr[j] = arr[j + 1];
+				arr[j + 1] = temp;
+			}
+		}
+
+		System.out.println("第四趟排序后的数组");
+		System.out.println(Arrays.toString(arr)); */
+
+    }
+
+    // 将前面额冒泡排序算法，封装成一个方法
+    public static void bubbleSort(int[] arr) {
+        // 冒泡排序 的时间复杂度 O(n^2), 自己写出
+        int temp = 0; // 临时变量
+        boolean flag = false; // 标识变量，表示是否进行过交换
+        for (int i = 0; i < arr.length - 1; i++) {
+
+            for (int j = 0; j < arr.length - 1 - i; j++) {
+                // 如果前面的数比后面的数大，则交换
+                if (arr[j] > arr[j + 1]) {
+                    flag = true;
+                    temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
                 }
             }
-            if(flag){
+            //System.out.println("第" + (i + 1) + "趟排序后的数组");
+            //System.out.println(Arrays.toString(arr));
+
+            if (!flag) { // 在一趟排序中，一次交换都没有发生过
                 break;
+            } else {
+                flag = false; // 重置flag!!!, 进行下次判断
             }
-            //排序步骤
-           //第i论排序的结果为
-            System.out.println("第"+i+"轮排序后的结果为：");
-            display(array);
-
         }
-        return array;
     }
 
-    //遍历显示数组
-    public static void  display(int[] array){
-        for (int i=0;i<array.length;i++){
-            System.out.print(array[i]+"");
-        }
-        System.out.println();
-    }
-
-    public static void main(String[] args) {
-        int[] array = {4,2,8,9,5,7,6,1,3};
-        //未排序数组顺序为
-        System.out.println("未排序数组顺序为:");
-        display(array);
-        System.out.println("-----------------------");
-        array=sort(array);
-        System.out.println("-----------------------");
-        System.out.println("经过冒泡排序后的数组顺序为：");
-        display(array);
-    }
 }
