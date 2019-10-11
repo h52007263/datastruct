@@ -8,6 +8,7 @@ package com.hzs.linkedlists;
  */
 
 public class Demo4 {
+
     public static void main(String[] args) {
         ListNode head1 = new ListNode(1);
         ListNode head2 = new ListNode(2);

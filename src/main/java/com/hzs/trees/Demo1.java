@@ -21,6 +21,7 @@ public class Demo1 {
         if (pre == null || in == null) {
             return null;
         }
+        //递归调用的终止条件
         if (pre.length == 0 || in.length == 0) {
             return null;
         }

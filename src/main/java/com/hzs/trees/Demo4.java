@@ -21,6 +21,7 @@ public class Demo4 {
         // 期望结果：[11,10,9,8,7,6,5]
         TreeNode result = getMirrorTree(node);
         node.inPrint(result);
+
     }
 
     public static TreeNode getMirrorTree(TreeNode node) {

@@ -59,7 +59,7 @@ public class TreeNode {
         if (null != tree.left) {
             inPrint(tree.left);
         }
-        System.out.println(tree);
+        System.out.print(tree);
         if (null != tree.right) {
             inPrint(tree.right);
         }

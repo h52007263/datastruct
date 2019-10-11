@@ -6,7 +6,7 @@ import java.util.Scanner;
  * @Author: wxw
  * @create: 2019-09-10-12:41
  */
-public class Solution {
+public class Pow {
 
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);

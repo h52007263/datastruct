@@ -12,6 +12,13 @@ public class LNodeTest {
         LNode<Integer> node3 = list1.addTail(3);
         LNode<Integer> node4 = list1.addTail(4);
         LNode<Integer> node5 = list1.addTail(5);
+
+
+        //1,链表中有效节点的个数
+        System.out.println("链表中有效节点个数："+list1.getLength(list1.getHead()));
+        //2,查找单链表中的倒数第k个结点 【新浪面试题】
+        System.out.println("单链表中的倒数第k个结点:"+list1.findLastIndexNode(list1.getHead(),2).data);
+
        //打印链表
         list1.print();
         //反转打印
@@ -32,7 +39,7 @@ public class LNodeTest {
         //两种方法反转链表
         list1.reserveLinkedList();
         //移除末尾元素
-        list1.removeByTail();
+        //list1.removeByTail();
         //判断链表是否有环形
         list1.enterOfLoop(list1.getHead());
         //链表合并
@@ -41,12 +48,19 @@ public class LNodeTest {
         list1.deleteNodeWithoutHead(node1);
         //打印链表的中间节点
         list1.printMiddleNode();
+
         //根据索引获取data
         list1.getEndK(3);
         //判断链表是否有环形
         list1.hasloop();
         //判断链表是否为空
         list1.isEmpty();
+        //判断当前链表与目标链表是否相交 并返回交点  栈实现
+
+        //判断当前链表与目标链表是否相交(相交与否取决于尾节点是否相同)
+
+        //返回两链表的交点(若不相交，返回null)
+
 
 
     }

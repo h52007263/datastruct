@@ -9,8 +9,7 @@ package com.wxw.linked;
 public class LNode<T> {
       T data;//数据域
       LNode<T> next;//指针域
-
-      /*
+    /*
        * 使用构造函数构造一个新节点
        * @Author 魏小伟
        * @Date 2019/9/5 19:53

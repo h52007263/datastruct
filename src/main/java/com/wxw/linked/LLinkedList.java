@@ -4,8 +4,7 @@ package com.wxw.linked;
  * @Description: 链表的Java实现 $
  * @Author: wxw
  */
-
-import java.security.PublicKey;
+import java.util.Stack;
 
 /**
  链表结构包含两个要素： 头结点head + 链表大小size，操作包括：
@@ -150,6 +149,8 @@ public class LLinkedList<T> {
         }
         head.next=pre;//将原链表的头节点指向反转后的链表
     }
+
+
    //===========判断单链表是否为空=========
    public boolean isEmpty() {
        return size == 0;
@@ -261,9 +262,151 @@ public class LLinkedList<T> {
       }
       return slow;
   }
+ //判断当前链表与目标链表是否相交 并返回交点  栈实现
+   public LNode<T> isInstersect_stack(LLinkedList<T> list2){
+       LNode<T> cur1 = head.next;   // 当前链表
+       LNode<T> cur2 = list2.getHead().next;  // 目标链表
+       // 两链表有一个为空，则返回 false
+       if(cur1 == null || cur2 == null){
+           return  null;
+       }
+       int count=0;
+       Stack<LNode<T>> headStack=new Stack<>();
+       Stack<LNode<T>> targetStack=new Stack<>();
+       while (cur1!=null){
+           headStack.push(cur1);
+           cur1=cur1.next;
+       }
+       while (cur2!=null){
+           headStack.push(cur2);
+           cur2=cur2.next;
+       }
+       LNode<T> ret=null;//交点
+       while (headStack.peek().data == targetStack.peek().data){
+           headStack.pop();
+           ret=targetStack.pop();
+       }
+       return ret;
+   }
 
 
+//=====判断当前链表与目标链表是否相交(相交与否取决于尾节点是否相同)========
+public boolean isIntersect(LLinkedList<T> list2) {
+    LNode<T> cur1 = head.next;   // 当前链表
+    LNode<T> cur2 = list2.getHead().next;  // 目标链表
+
+    // 两链表有一个为空，则返回 false
+    if(cur1 == null || cur2 == null){
+        return false;
+    }
+    // 遍历到第一个链表的尾节点
+    while(cur1.next != null){
+        cur1 = cur1.next;
+    }
+
+    // 遍历到第二个链表的尾节点
+    while(cur2.next != null){
+        cur2 = cur2.next;
+    }
+    return cur1 == cur2;  // 相交与否取决于尾节点是否相同
+}
+
+//=====返回两链表的交点(若不相交，返回null)======
+public LNode<T> getIntersectionPoint(LLinkedList<T> list2) {
+    LNode<T> cur1 = head.next;   // 当前链表
+    LNode<T> cur2 = list2.getHead().next;  // 目标链表
+
+    if(this.isIntersect(list2)){  // 先判断是否相交
+        // 让长度较长的链表先移动step步
+        int step = Math.abs(list2.size - this.size);
+        if(list2.size > this.size){
+            while(step > 0){
+                cur2 = cur2.next;
+                step --;
+            }
+        }else if(list2.size < this.size){
+            while(step > 0){
+                cur1 = cur1.next;
+                step --;
+            }
+        }
+        //两个指针同时移动，一旦指向同一个节点，即为交点
+        while(cur1 != cur2){
+            cur1 = cur1.next;
+            cur2 = cur2.next;
+        }
+        return cur1;
+    }
+    return null;
+}
 
 
+    //1,方法：获取到单链表的有效节点的个数(如果是带头结点的链表，需求不统计头节点)
+    /**
+     *
+     * @param head 链表的头节点
+     * @return 返回的就是有效节点的个数
+     */
+    public  int getLength(LNode<T> head) {
+        if(head.next==null){//空链表
+            return 0;
+        }
+        int length=0;
+        //定义一个辅助变量，这里不统计头节点
+        LNode<T> cur=head.next;
+        while (cur!=null){
+            length++;
+            cur=cur.next;//遍历
+        }
+        return length;
+    }
+  //2，查找单链表中的倒数第k个结点 【新浪面试题】
+  //思路
+  //1. 编写一个方法，接收head节点，同时接收一个index
+  //2. index 表示是倒数第index个节点
+  //3. 先把链表从头到尾遍历，得到链表的总的长度 getLength
+  //4. 得到size 后，我们从链表的第一个开始遍历 (size-index)个，就可以得到
+  //5. 如果找到了，则返回该节点，否则返回nulll
+    public LNode<T> findLastIndexNode(LNode<T> head,int index){
+        //判断如果链表为空，返回null
+        if(head.next==null){
+            return null;
+        }
+        //第一个遍历得到链表的长度(节点个数)
+        int size = getLength(head);
+        //第二次遍历  size-index 位置，就是我们倒数的第K个节点
+        //先做一个index的校验
+        if(index <=0 || index > size) {
+            return null;
+        }
+        //定义辅助变量，for循环定位到倒数的index
+        LNode<T> cur=head.next; //3 //3-1=2
+        for(int i=0;i<size-index;i++){
+            cur=cur.next;
+        }
+        return cur;
+    }
+//    //将单链表反转   没成功，但思路是对的
+//    public  void reserve(LNode<T> head) {
+//        //如果当前链表为空，或者只有一个节点，无需反转，直接返回
+//        if(head.next == null || head.next.next == null) {
+//            return ;
+//        }
+//        //定义一个辅助的指针(变量)，帮助我们遍历原来的链表
+//        LNode<T> cur=head.next;
+//        LNode<T> next=null;//指向当前节点[cur]的下一个节点
+//        LNode<T> reserveHead=head;
+//        //遍历原来的链表，每遍历一个节点，就将其取出，并放在新的链表reverseHead 的最前端
+//        while (cur!=null){
+//            next=cur.next;//先暂时保存当前节点的下一个节点，因为后面需要用
+//            cur.next=reserveHead.next;//将cur的下一个节点指向新的链表的最前端
+//            cur=next;//让cur后移
+//        }
+//        //将head.next 指向 reverseHead.next , 实现单链表的反转
+//     	head.next = reserveHead.next;
+//    }
+//
 
 }
+
+
